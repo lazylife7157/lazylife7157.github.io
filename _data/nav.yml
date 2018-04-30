@@ -1,0 +1,10 @@
+toc:
+  - title: Blog
+    icon: pencil
+    url: '/'
+  - title: About
+    icon: person
+    url: '/about'
+  - title: Contact
+    icon: mail
+    url: '/contact'

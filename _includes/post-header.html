@@ -1,0 +1,18 @@
+{% if page == post %}
+    <h1 class="title">{{ post.title }}</h1>
+{% else %}
+    <h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+{% endif %}
+<p>{{ post.date | date: '%B %e, %Y' }}</p>
+<ul class="horizontal no-margin-padding no-style">
+    <li class="text-with-icon category">
+        {% octicon file-submodule %}
+        <span>{{ post.category }}</span>
+    </li>
+    {% for tag in post.tags %}
+        <li class="text-with-icon tag">
+            {% octicon tag %}
+            <span>{{ tag }}</span>
+        </li>
+    {% endfor %}
+</ul>

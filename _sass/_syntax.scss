@@ -1,0 +1,41 @@
+
+pre.highlight {
+    padding: 0.8rem;
+    background-color: $oc-gray-8;
+
+    // Comments
+    .c, .cd, .cm, .c1, .cs {
+        color: $oc-gray-6;
+    }
+
+    // Keywords and operators
+    .k, .kn, .kp, .kr, .kv, .kd, .o, .ow {
+        color: $oc-pink-3;
+    }
+
+    // Literals
+    .m, .mf, .mh, .mi, .il, .mo, .mb, .mx {
+        color: $oc-yellow-3;
+    }
+
+    // String literals
+    .s, .sb, .sc, .sd, .s2, .sh, .sx, .s1 {
+        color: $oc-green-2;
+    }
+
+    .cp {
+        color: $oc-red-5;
+    }
+
+    .na {
+        color: $oc-red-5;
+    }
+
+    .nf, .nt, .nb {
+        color: $oc-blue-3;
+    }
+
+    .bp {
+        color: $oc-violet-3;
+    }
+}

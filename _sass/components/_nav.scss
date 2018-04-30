@@ -1,0 +1,38 @@
+nav {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            margin: 0.2rem;
+            padding: 0.4rem 0.8rem;
+
+            white-space: nowrap;
+
+            a {
+                display: block;
+
+                text-decoration: underline;
+                font-size: 1.2rem;
+                font-weight: 900;
+            }
+
+            svg {
+                padding: 0.4rem;
+            }
+        }
+
+        li:hover, li.active {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    nav > ul > li {
+        flex-basis: 100%;
+        margin: 0;
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,7 @@
+plugins:
+  - jekyll-paginate
+  - jekyll-octicons
+paginate: 8
+paginate_path: '/page:num'
+sass:
+  style: compressed
