@@ -5,3 +5,9 @@ paginate: 8
 paginate_path: '/page:num'
 sass:
   style: compressed
+collections:
+  glossary:
+    output: true
+markdown: kramdown
+kramdown:
+  input: GFM
