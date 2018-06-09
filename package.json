@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "vuepress": "^0.10.1"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "markdown-it-katex": "^2.0.3",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3"
+  }
+}
