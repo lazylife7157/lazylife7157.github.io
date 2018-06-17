@@ -7,7 +7,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "markdown-it-katex": "^2.0.3",
+    "@iktakahiro/markdown-it-katex": "^3.0.3",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3"
   }
