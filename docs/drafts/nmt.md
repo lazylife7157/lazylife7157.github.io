@@ -148,7 +148,7 @@ Dot-product attention은 어떤 memory(key-value store)에서 query를 통해 �
 
 Dot-product attention도 이와 비슷하지만, memory가 연속적이고 key를 one-hot 벡터가 아닌 어떤 분포로 표현한다는 점이 다릅니다. 그리고 Query와 유사도가 높은 key가 query에 해당하는 key가 되는데, 두 벡터의 dot-product로 유사도를 나타낼 수 있습니다(두 벡터가 이루는 각도가 0에 가까울 수록 dot-product는 커집니다). 따라서 $softmax\Big(\frac{QK^T}{\sqrt{d_k}}\Big)$가 곧 우리가 원하는 분포가 됩니다.
 
-dot-product를 $\sqrt{d_k}$로 나누어주는 이유는 softmax의 입력에 아주 큰 값이 사용되면 exp함수에서 overflow가 발생하거나 분포가 지나치게 뾰족해져서 gradient가 제대로 흐르지 못할 수 있기 때문입니다.
+dot-product를 $\sqrt{d_k}$로 나누어주는 이유는 softmax의 입력에 아주 큰 값이 사용되면 분포가 지나치게 뾰족해져서 gradient가 제대로 흐르지 못할 수 있기 때문입니다.
 
 Multi-head attention은 N개의 dot-product attention을 concatenate한 것입니다. Multi-head attention은 Transformer에서 다음의 3가지 다른 형태로 사용됩니다.
 
