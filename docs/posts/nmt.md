@@ -1,7 +1,7 @@
 ---
 title: Neural Machine Translation
-category: Draft
-date: 2018-06-13
+category: Machine Learning
+date: 2018-06-19
 sidebar: auto
 ---
 
@@ -146,7 +146,7 @@ $$Attention(Q, K, V)=softmax\Big(\frac{QK^T}{\sqrt{d_k}}\Big)V$$
 
 Dot-product attention은 어떤 memory(key-value store)에서 query를 통해 값을 얻어내는 과정으로 설명할 수 있습니다. 먼저 이산적인 memory를 생각해보면 query와 같은 key에 해당하는 value를 얻어오게 됩니다. 예를 들어 memory를 행렬로 표현한다면 query에 해당하는 key를 one-hot 벡터로 표현하고, memory 행렬에 곱해서 원하는 주소(row)의 value를 얻을 수 있습니다.
 
-Dot-product attention도 이와 비슷하지만, memory가 연속적이고 key를 one-hot 벡터가 아닌 어떤 분포로 표현한다는 점이 다릅니다. 그리고 Query와 유사도가 높은 key가 query에 해당하는 key가 되는데, 두 벡터의 dot-product로 유사도를 나타낼 수 있습니다(두 벡터가 이루는 각도가 0에 가까울 수록 dot-product는 커집니다). 따라서 $softmax\Big(\frac{QK^T}{\sqrt{d_k}}\Big)$가 곧 우리가 원하는 분포가 됩니다.
+Dot-product attention도 이와 비슷하지만, memory가 연속적이고 key를 one-hot 벡터가 아닌 어떤 분포로 표현한다는 점이 다릅니다. 그리고 query와 유사도가 높은 key가 query에 해당하는 key가 되는데, 두 벡터의 dot-product로 유사도를 나타낼 수 있습니다(두 벡터가 이루는 각도가 0에 가까울 수록 dot-product는 커집니다). 따라서 $softmax\Big(\frac{QK^T}{\sqrt{d_k}}\Big)$가 곧 우리가 원하는 분포가 됩니다.
 
 dot-product를 $\sqrt{d_k}$로 나누어주는 이유는 softmax의 입력에 아주 큰 값이 사용되면 분포가 지나치게 뾰족해져서 gradient가 제대로 흐르지 못할 수 있기 때문입니다.
 
