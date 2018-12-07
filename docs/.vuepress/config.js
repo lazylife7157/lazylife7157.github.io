@@ -19,5 +19,8 @@ module.exports = {
         ]
       }
     ]
+  },
+  configureWebpack: (config, isServer) => {
+    process.env.NODE_ENV = 'production'
   }
 }
