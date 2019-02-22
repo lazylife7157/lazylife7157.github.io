@@ -33,7 +33,7 @@ export default {
   background-color: $oc-gray-7
 
 .posts
-  margin-top: 2rem
+  margin: 2rem 0
   text-align: center
   li
     margin-top: 0.8rem
