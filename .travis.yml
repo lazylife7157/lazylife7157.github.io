@@ -1,0 +1,21 @@
+sudo: false
+notifications:
+  email: false
+branches:
+  only:
+    - develop
+language: node_js
+node_js:
+  - 11
+script:
+  - yarn install
+  - yarn build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  target-branch: master
+  local-dir: dist
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: develop
