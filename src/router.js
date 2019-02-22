@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Posts from './views/Posts.vue'
-import About from './views/About.vue'
 import DynamicMarkdown from './components/DynamicMarkdown.vue'
 import posts from "@/assets/posts.json"
 
@@ -16,7 +14,7 @@ export default new Router({
       path: '/posts',
       alias: '/',
       name: 'posts',
-      component: Posts,
+      component: () => import('./views/Posts.vue'),
       props: {
         posts
       },
@@ -34,7 +32,7 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: () => import('./views/About.vue')
     },
   ]
 })
