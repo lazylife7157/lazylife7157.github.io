@@ -1,31 +1,68 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <ul id="nav">
+      <li><router-link to="/posts">POSTS</router-link></li>
+      <li><router-link to="/about">ABOUT</router-link></li>
+    </ul>
+    <div class="container">
+      <div class="spacer"></div>
+      <router-view class="view" />
+      <div class="spacer"></div>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style lang="sass">
+@import 'open-color/open-color.scss'
+@import 'assets/css/default.sass'
+@import 'assets/css/markdown.sass'
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+#app
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  height: 100vh
+
+#nav
+  width: 100%
+  text-align: center
+  background-color: $oc-gray-9
+  padding: 2rem 0
+
+  li
+    display: inline
+    margin: 0.5rem
+    font-size: 1.1rem
+
+    a
+      color: $oc-violet-3
+      text-decoration: none
+      &:hover
+        font-weight: bold
+      &.router-link-active
+        font-weight: bold
+        color: $oc-pink-3
+
+.container
+  display: flex
+  flex-direction: row
+  width: 100%
+  height: 100%
+
+  @media (max-width: 800px)
+    .spacer
+      flex: 0
+    .view
+      flex: 1
+
+  @media (min-width: 800px)
+    .spacer
+      flex: 1 1 0px
+    .view
+      flex: 4 1 800px
+      max-width: 1024px
 </style>
