@@ -2,6 +2,7 @@
   <div id="app">
     <ul id="nav">
       <li><router-link to="/posts">POSTS</router-link></li>
+      <li><router-link to="/notes">NOTES</router-link></li>
       <li><router-link to="/about">ABOUT</router-link></li>
     </ul>
     <div class="container">
