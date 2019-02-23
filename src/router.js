@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DynamicMarkdown from './components/DynamicMarkdown.vue'
+import GistMarkdown from './components/GistMarkdown.vue'
 import posts from "@/assets/posts.json"
 import notes from "@/assets/notes.json"
 
@@ -20,9 +20,12 @@ function route_article(name, list) {
       ...list.map(item => ({
         path: item.name,
         name: item.name,
-        component: DynamicMarkdown,
+        component: GistMarkdown,
         props: {
-          href: item.url
+          gist_file: {
+            gist_id: item.gist_id,
+            file_name: item.file_name
+          }
         }
       }))
     ]

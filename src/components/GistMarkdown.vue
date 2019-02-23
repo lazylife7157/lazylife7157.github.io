@@ -4,19 +4,20 @@
 
 <script>
 export default {
-  props: ['href'],
+  props: ['gist_file'],
   data: () => ({
     markdown: ''
   }),
   methods: {
     refresh() {
-      fetch(this.href)
-        .then(response => response.text())
-        .then(text => this.markdown = text)
+      fetch(`https://api.github.com/gists/${this.gist_file.gist_id}`)
+        .then(response => response.json())
+        .then(json => json.files[this.gist_file.file_name].content)
+        .then(markdown => this.markdown = markdown)
     }
   },
   watch: {
-    href() {
+    gist_file() {
       this.refresh()
     }
   },
